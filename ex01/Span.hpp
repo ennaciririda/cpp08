@@ -3,14 +3,15 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 class Span
 {
 private:
 	std::vector<int> vec;
 	unsigned int n;
-public:
 	Span();
+public:
 	Span(unsigned int N);
 	Span(const Span &obj);
 	Span &operator=(const Span &obj);

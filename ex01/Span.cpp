@@ -37,7 +37,7 @@ void Span::addNumber(int n)
 int Span::get_min(std::vector<int> v)
 {
 	int min = v[0];
-	for (unsigned long i = 0; i < v.size() ; i++)
+	for (unsigned long i = 1; i < v.size() ; i++)
 	{
 		if (v[i] < min)
 			min = v[i];
@@ -58,9 +58,19 @@ int Span::get_max(std::vector<int> v)
 
 int Span::shortestSpan()
 {
+	int shortest;
+	std::vector<int> tmp;
+	tmp = this->vec;
 	if (this->vec.size() <= 1)
 		throw "Not enaugh elements in the container";
-
+	std::sort(tmp.begin(), tmp.end());
+	shortest = tmp[1] - tmp[0];
+	for (unsigned long i = 1; i < tmp.size() - 1; i++)
+	{
+		if (tmp[i + 1] - tmp[i] < shortest)
+			shortest = tmp[i + 1] - tmp[i];
+	}
+	return shortest;
 }
 
 int Span::longestSpan()
