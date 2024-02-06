@@ -22,6 +22,7 @@ Span &Span::operator=(const Span &obj)
 		{
 			this->vec[i] = obj.vec[i];
 		}
+		this->n = obj.n;
 	}
 	return *this;
 }
