@@ -13,11 +13,6 @@ int func(T a, int b)
 		return *it;
 	else
 		throw "No occurence of the element given in the vector";
-	// for (unsigned long i = 0 ; i < a.size(); i++)
-	// {
-	// 	if (a[i] == b)
-	// 		return a[i];
-	// }
 }
 
 #endif

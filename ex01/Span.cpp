@@ -35,6 +35,22 @@ void Span::addNumber(int n)
 		throw "The container is full";
 }
 
+void Span::fill_my_vec(std::vector<int>::iterator it, std::vector<int>::iterator it2)
+{
+	std::vector<int>::iterator iter;
+	if (std::distance(it, it2) < 0 || this->vec.size() + std::distance(it, it2) > this->n)
+		throw "the container can't take all this data";
+	for (iter = it ; iter != it2; iter++)
+		addNumber(*iter);
+}
+
+void Span::print_vec()
+{
+	for (unsigned long i = 0; i < this->vec.size() ; i++)
+		std::cout << vec[i] << "|";
+	std::cout << std::endl;
+}
+
 int Span::get_min(std::vector<int> v)
 {
 	int min = v[0];

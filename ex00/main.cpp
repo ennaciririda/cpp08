@@ -4,7 +4,7 @@ int main()
 {
 	try
 	{
-		int a = 12;
+		int a = 1;
 		std::vector<int> vec;
 		vec.push_back(1);
 		vec.push_back(2);
